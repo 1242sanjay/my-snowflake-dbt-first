@@ -46,5 +46,11 @@ models:
         tests:
           - accepted_values:
               values: ['returned', 'completed', 'return_pending', 'shipped', 'placed']
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
 
         
